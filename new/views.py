@@ -1,7 +1,7 @@
 from django.conf import settings
 from django.contrib.auth import login
 from . import forms
-import requests
+import requests,json
 from django.shortcuts import redirect,render
 from django.views import View
 from django.utils.decorators import method_decorator
@@ -32,5 +32,6 @@ class Currencies(View):
     def get(self,request):
         url = " https://api.freecurrencyapi.com/v1/currencies?apikey=3XlQlyOrJi8zHcb1ymyFopTHRuFSQhdtJ8bEoN30"
 
-        response= requests.request("GET", url)
-        return render(request, 'new/currencies.html',{'response':response})
+        response = requests.get(url)
+        jik= json.loads(response.text)
+        return render(request, 'new/currencies.html',{'jik':jik})

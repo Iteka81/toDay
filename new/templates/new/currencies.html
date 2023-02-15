@@ -3,8 +3,25 @@
 {% block content  %}
 
     <div class="content">
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Symbol</th>
+                <th>Code</th>
 
-            {{response.text}}
+            </tr>
+
+            {% for i in jik.data.items%}
+                {%for j in i%}
+                    <tr>
+                        <td>{{j.name}}</td>
+                        <td>{{j.symbol}}</td>
+                        <td>{{j.code}}</td>
+                     </tr>
+            {% endfor %}
+            {% endfor %}
+
+        </table>
 
     </div>
 {% endblock %}
