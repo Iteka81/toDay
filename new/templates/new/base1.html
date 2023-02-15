@@ -1,0 +1,18 @@
+{% load static %}
+<html>
+<head>
+    <title>{% block title%} {% endblock title %}</title>
+    <link rel="stylesheet" href="{% static 'stat.css'%}">
+</head>
+<body>
+    <div class="navbar">
+        <a   href="{% url 'ninde' %}">Home</a>
+        <a href="{% url 'currencies' %}">Currencies</a>
+        <a href="#">Currency Converter</a>
+        <a href="#">Rate Historic</a>
+        <a href="#">Log Out</a>
+    </div>
+
+{% block content %}  {% endblock %}
+</body>
+</html>
