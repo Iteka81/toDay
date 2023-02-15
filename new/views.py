@@ -30,9 +30,7 @@ def ninde(request):
 class Currencies(View):
 
     def get(self,request):
-        url = 'https://currency-converter5.p.rapidapi.com/currency/list"'
-        querystring = {"format":"json"}
-        headers = {"X-RapidAPI-KEY": "29a64677b3msh3e760bd6bc4016ap1c0663jsne86061996f08",
-                   "X-RapidAPI-Host":"currency-converter5.p.rapidapi.com"}
-        response= requests.request("GET", url,headers=headers,params=querystring)
+        url = " https://api.freecurrencyapi.com/v1/currencies?apikey=3XlQlyOrJi8zHcb1ymyFopTHRuFSQhdtJ8bEoN30"
+
+        response= requests.request("GET", url)
         return render(request, 'new/currencies.html',{'response':response})
